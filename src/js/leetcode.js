@@ -1635,8 +1635,8 @@ async function appendProblemToReadme(topic, markdownFile, hook, problem) {
     console.log('Language:', language);
     if (language) {
       path = useDifficultyFolder
-        ? `${language}/${difficulty}/${filePath}`
-        : `${language}/${filePath}`;
+        ? `${basePath}/${language}/${difficulty}/${filePath}`
+        : `${basePath}/${language}/${filePath}`;
     } else {
       console.log("No language found for problem:", problem);
       return ''
@@ -1644,7 +1644,7 @@ async function appendProblemToReadme(topic, markdownFile, hook, problem) {
   } else {
     path = useDifficultyFolder
     ? `${basePath}/${difficulty}/${filePath}`
-    : `${filePath}`;
+    : `${basePath}/${filePath}`;
   }
 
   const url = `https://github.com/${hook}/tree/main/${path}`;
